@@ -5,7 +5,7 @@ const globs = {
 
 module.exports = {
   extends: ['airbnb-base', 'prettier'],
-  plugins: ['prettier', 'compat', 'typescript'],
+  plugins: ['prettier', 'compat', '@typescript-eslint'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
@@ -49,11 +49,13 @@ module.exports = {
     },
     {
       files: globs.typescript,
-      parser: 'typescript-eslint-parser',
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: './tsconfig.json',
+      },
       rules: {
-        // Get false positives to these, use TS to check for
-        'no-undef': 0,
-        'no-unused-vars': 0,
+        // Confuses the parser in files which have JSX
+        '@typescript-eslint/no-angle-bracket-type-assertion': 2,
       },
     },
   ],

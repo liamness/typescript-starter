@@ -54,6 +54,6 @@ module.exports = (_, { mode } = {}) => ({
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(mode === 'development'),
     }),
-    new CleanPlugin(['dist']),
+    new CleanPlugin(),
   ],
 });
