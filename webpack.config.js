@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
@@ -49,11 +48,5 @@ module.exports = (_, { mode } = {}) => ({
         : [],
   },
   devtool: mode === 'development' ? 'cheap-module-source-map' : false,
-  plugins: [
-    new HtmlWebpackPlugin(),
-    new webpack.DefinePlugin({
-      __DEV__: JSON.stringify(mode === 'development'),
-    }),
-    new CleanPlugin(),
-  ],
+  plugins: [new HtmlWebpackPlugin(), new CleanPlugin()],
 });

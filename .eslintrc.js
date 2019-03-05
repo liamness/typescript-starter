@@ -23,9 +23,6 @@ module.exports = {
     },
     polyfills: ['promises'],
   },
-  globals: {
-    __DEV__: false,
-  },
   rules: {
     'prettier/prettier': 2,
     'compat/compat': 2,
