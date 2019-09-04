@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (_, { mode } = {}) => ({
   entry: ['@babel/polyfill', './src/index.ts'],
@@ -48,5 +48,5 @@ module.exports = (_, { mode } = {}) => ({
         : [],
   },
   devtool: mode === 'development' ? 'cheap-module-source-map' : false,
-  plugins: [new HtmlWebpackPlugin(), new CleanPlugin()],
+  plugins: [new HtmlWebpackPlugin(), new CleanWebpackPlugin()],
 });

@@ -52,7 +52,7 @@ module.exports = {
       },
       rules: {
         // Confuses the parser in files which have JSX
-        '@typescript-eslint/no-angle-bracket-type-assertion': 2,
+        '@typescript-eslint/consistent-type-assertions': 2,
       },
     },
   ],
