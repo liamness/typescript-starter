@@ -21,7 +21,7 @@ module.exports = {
         config: 'webpack.config.js',
       },
     },
-    polyfills: ['promises'],
+    polyfills: ['Promise', 'Object.entries'],
   },
   rules: {
     'prettier/prettier': 2,

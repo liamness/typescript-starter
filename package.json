@@ -32,13 +32,6 @@
   "dependencies": {
     "core-js": "^3.2.1"
   },
-  "browserslist": [
-    "last 2 versions",
-    "not < 0.25%",
-    "not UCAndroid > 0",
-    "not OperaMini all",
-    "not ie > 0"
-  ],
   "eslintIgnore": [
     "dist",
     "!.eslintrc.js",
