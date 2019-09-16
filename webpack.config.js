@@ -1,9 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (_, { mode } = {}) => ({
-  entry: ['@babel/polyfill', './src/index.ts'],
+  entry: ['core-js/stable', './src/index.ts'],
   output: {
     filename: '[name]-[contenthash].js',
   },
@@ -37,15 +36,6 @@ module.exports = (_, { mode } = {}) => ({
         },
       },
     },
-    minimizer:
-      mode === 'production'
-        ? [
-            new UglifyJsPlugin({
-              cache: true,
-              parallel: true,
-            }),
-          ]
-        : [],
   },
   devtool: mode === 'development' ? 'cheap-module-source-map' : false,
   plugins: [new HtmlWebpackPlugin(), new CleanWebpackPlugin()],
