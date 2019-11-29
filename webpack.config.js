@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (_, { mode } = {}) => ({
-  entry: ['core-js/stable', './src/index.ts'],
+  entry: ['./src/index.ts'],
   output: {
     filename: '[name]-[contenthash].js',
   },

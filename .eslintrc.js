@@ -8,7 +8,7 @@ module.exports = {
   plugins: ['prettier', 'compat', '@typescript-eslint'],
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: 'module',
   },
   env: {
@@ -27,9 +27,6 @@ module.exports = {
     'prettier/prettier': 2,
     'compat/compat': 2,
     'import/prefer-default-export': 0,
-    // This rule brings false positives, is unmaintained
-    // Plus 'jsx-a11y/label-has-associated-control' pretty much has it covered
-    'jsx-a11y/label-has-for': 0,
   },
   overrides: [
     {
@@ -49,10 +46,6 @@ module.exports = {
       parser: '@typescript-eslint/parser',
       parserOptions: {
         project: './tsconfig.json',
-      },
-      rules: {
-        // Confuses the parser in files which have JSX
-        '@typescript-eslint/consistent-type-assertions': 2,
       },
     },
   ],

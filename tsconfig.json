@@ -2,7 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "jsx": "preserve",
-    "lib": ["es2018", "dom"],
+    "lib": ["es2019", "dom"],
     "baseUrl": "src",
     "pretty": true,
     "allowJs": true,

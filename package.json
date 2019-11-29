@@ -3,34 +3,37 @@
   "description": "A starter project that Liam will totally use in the future and definitely won't just abandon",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-typescript": "^7.3.3",
-    "@typescript-eslint/eslint-plugin": "^2.1.0",
-    "@typescript-eslint/parser": "^2.1.0",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
-    "eslint": "^6.3.0",
+    "eslint": "^6.7.1",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-compat": "^3.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-typescript": "^0.14.0",
     "html-webpack-plugin": "3.2.0",
-    "prettier": "^1.18.2",
-    "serve": "^11.1.0",
-    "typescript": "3.5.2",
-    "webpack": "4.39.3",
-    "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "prettier": "^1.19.1",
+    "serve": "^11.2.0",
+    "typescript": "3.7.2",
+    "webpack": "4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "core-js": "^3.2.1"
+    "core-js": "^3.4.5"
   },
   "eslintIgnore": [
     "dist",
@@ -43,6 +46,8 @@
     "serve": "serve dist",
     "lint": "eslint . --ext .js,.ts",
     "check-types": "tsc",
-    "check-prettiness": "prettier '**/*.{j,t}s' --list-different --ignore-path .gitignore"
+    "check-prettiness": "prettier '**/*.{j,t}s' --list-different --ignore-path .gitignore",
+    "profile": "webpack --mode=production --profile --json > stats.json",
+    "profile:output": "webpack-bundle-analyzer stats.json dist"
   }
 }
