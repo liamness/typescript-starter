@@ -1,5 +1,6 @@
 {
   "name": "starter-project",
+  "homepage": "https://liamness.github.io/typescript-starter/",
   "description": "A starter project that Liam will totally use in the future and definitely won't just abandon",
   "private": true,
   "devDependencies": {
@@ -23,6 +24,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-typescript": "^0.14.0",
+    "gh-pages": "^2.1.1",
     "html-webpack-plugin": "3.2.0",
     "prettier": "^1.19.1",
     "serve": "^11.2.0",
@@ -44,6 +46,7 @@
     "start": "webpack-dev-server --mode=development --watch",
     "build": "webpack --mode=production",
     "serve": "serve dist",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext .js,.ts",
     "check-types": "tsc",
     "check-prettiness": "prettier '**/*.{j,t}s' --list-different --ignore-path .gitignore",
