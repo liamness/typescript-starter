@@ -1,5 +1,5 @@
 export const runApp = () => {
-  document.body.style.cssText = Object.entries({
+  Object.assign(document.body.style, {
     display: 'flex',
     height: '100vh',
     width: '100vw',
@@ -11,11 +11,7 @@ export const runApp = () => {
     'text-align': 'center',
     padding: '1em',
     'box-sizing': 'border-box',
-  }).reduce(
-    (styleAttribute, [property, value]) =>
-      `${styleAttribute}${property}:${value};`,
-    ''
-  );
+  });
 
   document.body.textContent = 'wow much starter project';
 };
