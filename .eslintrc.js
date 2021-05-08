@@ -1,14 +1,12 @@
-const globs = {
-  config: ['.eslintrc.js', '*.config.js'],
-  typescript: ['*.ts{,x}'],
-};
+const configFiles = ['.eslintrc.js', '*.config.js'];
 
 module.exports = {
-  extends: ['airbnb-base', 'prettier'],
-  plugins: ['prettier', 'compat', '@typescript-eslint'],
+  extends: 'react-app',
+  plugins: ['compat'],
+  ignorePatterns: ['dist', '!.eslintrc.js', '*.d.ts'],
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 2019,
+    ecmaVersion: 2021,
     sourceType: 'module',
   },
   env: {
@@ -16,36 +14,28 @@ module.exports = {
     browser: true,
   },
   settings: {
-    'import/resolver': {
-      webpack: {
-        config: 'webpack.config.js',
-      },
+    react: {
+      // Not using react, just putting this here to keep plugin happy
+      version: '17.0.0',
     },
-    polyfills: ['Object.assign'],
   },
   rules: {
-    'prettier/prettier': 2,
-    'compat/compat': 2,
-    'import/prefer-default-export': 0,
+    'compat/compat': 'error',
+    'import/no-extraneous-dependencies': 'error',
   },
   overrides: [
     {
-      files: globs.config,
+      files: configFiles,
       env: {
         node: true,
         browser: false,
       },
       rules: {
-        'compat/compat': 0,
-        'no-console': 0,
-        'import/no-extraneous-dependencies': [2, { devDependencies: true }],
-      },
-    },
-    {
-      files: globs.typescript,
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        project: './tsconfig.json',
+        'compat/compat': 'off',
+        'import/no-extraneous-dependencies': [
+          'error',
+          { devDependencies: true },
+        ],
       },
     },
   ],
